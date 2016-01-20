@@ -1,7 +1,7 @@
 require 'securerandom'
 
 class FileUploader
-	def upload_file(file)
+	def self.upload_file(file)
 		directory = "public/files"
 		extension = File.extname(file.original_filename)
 		name = SecureRandom.hex + extension

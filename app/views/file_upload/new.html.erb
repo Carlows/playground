@@ -1,0 +1,7 @@
+<h1>File upload example</h1>
+
+<%= form_tag(upload_path, :method => "post", :enforce_utf8 => false, :multipart => true) do %>
+	<%= file_field_tag 'file' %>
+
+	<%= submit_tag "Upload" %>
+<% end %>

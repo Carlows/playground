@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  root 'home#index'
+
+  get 'uploads' => 'file_upload#show', as: :show_uploads
+  get 'new_upload' => 'file_upload#new', as: :new_upload
+  post 'upload' => 'file_upload#create', as: :upload
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
