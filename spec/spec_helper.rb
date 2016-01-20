@@ -16,7 +16,14 @@
 # users commonly want.
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
+require 'rails'
 RSpec.configure do |config|
+  config.after(:all) do 
+    if Rails.env == "development"
+      files_path = "public/files"
+      FileUtils.rm_rf(Dir["#{files_path}/[^.]*"])
+    end
+  end
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
   # assertions if you prefer.
