@@ -1,7 +1,8 @@
-require 'file_uploader'
+require 'file_manager'
 
 class FileUploadController < ApplicationController
 	def show
+		@image_paths = FileManager.get_imagepaths("public/files/")
 	end
 
   def new
@@ -9,9 +10,9 @@ class FileUploadController < ApplicationController
 
   def create
   	file = params[:file]
-  	filename = FileUploader.upload_file(file)
+  	filename = FileManager.upload_file(file)
 
-  	redirect_to '/'
+  	redirect_to show_uploads_url
   end
 
 end

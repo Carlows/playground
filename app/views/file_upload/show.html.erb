@@ -1,0 +1,15 @@
+<h1>All files in /files folder</h1>
+
+<% unless @image_paths.empty? %>
+	<div class="images">
+		<% @image_paths.each do | path | %>
+			<img width="400" height="400" src="/files/<%= path %>">
+		<% end %>
+	</div>
+<% else %>
+	<div>
+		<p>There are no images in stored this folder</p>
+	</div>
+<% end %>
+
+<%= link_to 'Upload image', new_upload_path %>
