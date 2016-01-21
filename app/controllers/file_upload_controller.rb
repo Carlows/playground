@@ -1,7 +1,7 @@
 require 'file_uploader'
 
 class FileUploadController < ApplicationController
-	def index
+	def show
 	end
 
   def new
