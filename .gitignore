@@ -10,6 +10,7 @@ capybara-*.html
 /spec/tmp
 /tmp
 public/files
+spec/fixtures
 **.orig
 rerun.txt
 pickle-email-*.html

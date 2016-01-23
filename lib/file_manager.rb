@@ -1,8 +1,8 @@
 require 'securerandom'
 
 class FileManager
-	def self.upload_file(file)
-		directory = "public/files"
+	def self.upload_file(file, storage_path = "public/files")
+		directory = storage_path
 		extension = File.extname(file.original_filename)
 		name = SecureRandom.hex + extension
 		path = File.join(directory, name)

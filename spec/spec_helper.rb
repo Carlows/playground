@@ -18,9 +18,9 @@
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 require 'rails'
 RSpec.configure do |config|
-  config.after(:all) do 
+  config.after(:each) do 
     if Rails.env == "development"
-      files_path = "public/files"
+      files_path = "spec/fixtures/testfiles"
       FileUtils.rm_rf(Dir["#{files_path}/[^.]*"])
     end
   end
